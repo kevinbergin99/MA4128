@@ -1,0 +1,11 @@
+install.packages("dplyr")library(dplyr)sessionInfo()a<-mtcarsmtcars %>% head() # gives ypou the first few rowsdim(a)nrow(a)ncol(a)names(a)class(a)summary(a)irisiris2<- iris %>%  filter(Species == "setosa")iris2iris3 <- iris %>% filter(Sepal.Length > 5.6)iris3
+
+
+
+
+
+
+
+
+
+
