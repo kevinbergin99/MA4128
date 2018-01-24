@@ -1,7 +1,14 @@
 install.packages("dplyr")library(dplyr)sessionInfo()a<-mtcarsmtcars %>% head() # gives ypou the first few rowsdim(a)nrow(a)ncol(a)names(a)class(a)summary(a)irisiris2<- iris %>%  filter(Species == "setosa")iris2iris3 <- iris %>% filter(Sepal.Length > 5.6)iris3
 
 
-
+install.packages("dplyr")library(dplyr)sessionInfo()a<-mtcarsmtcars %>% head() # gives ypou the first few rowsdim(a)nrow(a)ncol(a)names(a)class(a)summary(a)irisiris2<- iris %>%  filter(Species == "setosa")iris2iris3 <- iris %>% filter(Sepal.Length > 5.6)iris3
+iris %>% group_by(Species)%>% summarize(Mean = mean(Sepal.Length),Variance = var(Sepal.Length),SD = sd(Sepal.Length))
+mtcars %>% group_by(am,vs)%>% summarize (MedianMPG = median(mpg))mtcars%>% select (1:4) mtcars%>% select (1:drat)mtcars%>% select (cyl:vs) mtcars%>% select (2:4,everything())mtcars%>% mutate(sqrtMPG= sqrt(mpg),logMPG = log(mpg)) %>% select(mpg,sqrtMPG,logMPG,everything() )
+install.packages("readr")  install.packages("modelr")  install.packages("randomForest")  install.packages("ggplot2")  
+ library(readr)  library(modelr)  library(randomForest)  library(ggplot2)
+data(diamonds)diamonds%>%dim()diamonds %>% names()diamtrain<-diamonds%>% sample_frac(0.30)diamtraindiamtest<-diamonds%>% sample_frac(0.10)diamtest
+pricemodel <- randomForest(price~. , data=diamtrain)
+pricemodel <- lm(price~. , data=diamtrain)pricemodel
 
 
 
